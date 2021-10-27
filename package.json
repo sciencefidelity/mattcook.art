@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "matt-cook-dot-art",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Website of the digital and sonic artist Matt Cook",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Matt Cook <matt@sciencefideltity.co.uk>",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "gatsby develop",
