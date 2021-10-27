@@ -1,5 +1,5 @@
-
 @use 'colors' as c;
+@use 'typography' as t;
 
 * {
   margin: 0;
@@ -15,7 +15,7 @@
 }
 
 html {
-  font-family: "Sofia Pro", sans-serif;
+  font-family: t.$sans;
   font-size: 65.5%;
 }
 
@@ -25,7 +25,7 @@ body {
 }
 
 h1 {
-  font-family: "Halis", sans-serif;
+  font-family: t.$sans;
   font-size: 5em;
   font-weight: 800;
   text-transform: uppercase;

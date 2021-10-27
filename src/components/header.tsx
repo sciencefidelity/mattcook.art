@@ -1,13 +1,14 @@
-import * as React from "react"
+import React, { FC } from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
-const Header = ({ siteTitle }) => (
+interface Props {
+  siteTitle: string
+}
+
+const Header: FC<Props> = ({ siteTitle }) => (
   <header>
     <div>
-      <h1 className={`brand`}>Matt Cook Webart</h1>
-      <h1>Arts</h1>
+      <h1 className={`brand`}>{siteTitle}</h1>
     </div>
   </header>
 )
