@@ -5290,10 +5290,10 @@ gatsby-core-utils@^2.14.0:
     tmp "^0.2.1"
     xdg-basedir "^4.0.0"
 
-gatsby-core-utils@^3.2.0, gatsby-core-utils@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.4.0.tgz#6d5658dc045dcf60a314d4f2d0bc85e260659837"
-  integrity sha512-dYQpyo1BLGJzxQOXgGs1Fbj7jzGj5cKAIPYz2hz2l4Aus6skwjjaUlOjZlrWIahNHoLkx3mH0f5y6E8205T/aQ==
+gatsby-core-utils@^3.2.0, gatsby-core-utils@^3.3.0, gatsby-core-utils@^3.4.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.6.0.tgz#0e2f951e2c53731bdb459eb118eb3815a90a9393"
+  integrity sha512-xmjtOWQfLinNbgBiDRT1KpEfDZm0Z0u6+hsf8EH8Ps5UCIhKinGrdtK+QH+RzPGCV1PUg/E/pnLVqQLCvD+tmA==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -5301,6 +5301,7 @@ gatsby-core-utils@^3.2.0, gatsby-core-utils@^3.4.0:
     file-type "^16.5.3"
     fs-extra "^10.0.0"
     got "^11.8.3"
+    lock "^1.1.0"
     node-object-hash "^2.3.10"
     proper-lockfile "^4.1.2"
     tmp "^0.2.1"
@@ -5578,10 +5579,10 @@ gatsby-source-filesystem@^3.2.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-sanity@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.1.0.tgz#a6705e5f45cd71150c5230e7111c25ff0c71e505"
-  integrity sha512-bG/VRH/JgZ1NSz1h8ZvOtFWDsBYXOqudLR/mQlDkm+NpIpcvJ9CgFO2LNHuVI4/0oHt9gvA7hX57b0CyOdT1Aw==
+gatsby-source-sanity@^7.3.2:
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-7.3.2.tgz#785f9d12c26b2c991210b84e3eacd480784f0ee0"
+  integrity sha512-378i0rk0ESiUvRZiYnQRqpRTY36irq4+VZZ3s/j/zwlBXkK4BXkyZkl+ELtOksSWKSL61LWhxAWzKtLuGAOxpw==
   dependencies:
     "@sanity/client" "^2.21.3"
     "@sanity/image-url" "^0.140.19"
@@ -5589,12 +5590,14 @@ gatsby-source-sanity@^7.1.0:
     "@types/url-parse" "^1.4.4"
     axios "^0.24.0"
     debug "^4.3.2"
+    gatsby-core-utils "^3.3.0"
     gatsby-plugin-utils "^2.0.0"
     get-stream "^6.0.1"
     lodash "^4.17.21"
     oneline "^1.0.3"
     pumpify "^2.0.1"
     rxjs "^6.6.3"
+    semver "^7.3.5"
     split2 "^4.1.0"
     through2 "^4.0.2"
     url-parse "^1.5.3"
@@ -7330,7 +7333,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lock@^1.0.0:
+lock@^1.0.0, lock@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/lock/-/lock-1.1.0.tgz#53157499d1653b136ca66451071fca615703fa55"
   integrity sha1-UxV0mdFlOxNspmRRBx/KYVcD+lU=
