@@ -1,5 +1,4 @@
-# Matt Cook Art
+# Matt Cook Dot Art
 
-Site in development for [mattcook.art](http://mattcook.art).
+Something colorful to come [mattcook.art](https://mattcook.art).
 
-Made with [Gatsby](https://www.gatsbyjs.com/).
