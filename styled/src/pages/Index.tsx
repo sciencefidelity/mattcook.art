@@ -36,6 +36,25 @@ const ReversedButton = props => (
   />
 )
 
+const Link = ({ className, children }) => (
+  <a className={className}>{children}</a>
+)
+
+// color: ${props => props.inputColor || "palevioletred"}
+const Input = styled.input`
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: papayawhip;
+  color: rebeccapurple;
+  border: none;
+  border-radius: 3px;
+`
+
+const StyledLink = styled(Link)`
+  color: palevioletred:
+  font-weight: bold;
+`
+
 const Index: FC = () => {
   return (
     <>
@@ -47,6 +66,12 @@ const Index: FC = () => {
       <Button>Normal</Button>
       <TomatoButton as="a" href="#">Tomato</TomatoButton>
       <Button as={ReversedButton}>Primary</Button>
+      {/* <StyledLink>Prettified</StyledLink> */}
+      <Input
+        defaultValue="@sciencefidelity"
+        type="text"
+        // inputColor="rebeccapurple"
+      />
     </>
   )
 }
