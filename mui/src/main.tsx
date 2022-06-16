@@ -6,13 +6,21 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import "styles/globals.scss"
 import CssBaseline from "@mui/material/CssBaseline"
+import { ThemeProvider, createTheme } from "@mui/material/styles"
 import Index from "pages/Index"
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark"
+  }
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <CssBaseline>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <Index />
-    </CssBaseline>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")
 )

@@ -4,7 +4,10 @@ import Button from "@mui/material/button"
 const Index: FC = () => {
   return (
     <div className="container">
-      <Button variant="contained">Hello World</Button>
+      <main>
+        <Button variant="contained">Dark by default</Button>
+        <p>This app is using the dark mode</p>
+      </main>
     </div>
   )
 }
