@@ -2,7 +2,9 @@ import React, { FC, useState } from "react"
 import styled from "styled-components"
 
 const StyledCounter = styled.div`
-
+  border: 2px solid palevioletred;
+  display: inline-block;
+  border-radius: 7px;
 `
 
 const Paragraph = styled.p`
@@ -13,7 +15,7 @@ const Paragraph = styled.p`
   font-weight: 900;
 `
 
-const Button = styled("button")<{primary?: boolean}>`
+export const Button = styled("button")<{primary?: boolean}>`
   background-color: ${props => props.primary ? "white" : "palevioletred"};
   color: ${props => props.primary ? "palevioletred" : "white"};
   font-size: 1em;
@@ -22,7 +24,11 @@ const Button = styled("button")<{primary?: boolean}>`
   border: 2px solid palevioletred;
   border-radius: 3px;
   text-decoration: none;
-  display: inline;
+`
+
+const CounterButton = styled(Button)`
+  cursor: pointer;
+  font-weight: 900;
 `
 
 export const Counter: FC = () => {
@@ -32,9 +38,9 @@ export const Counter: FC = () => {
 
   return (
     <StyledCounter>
-      <Button onClick={decrement}>-</Button>
+      <CounterButton onClick={decrement}>–</CounterButton>
       <Paragraph>{count}</Paragraph>
-      <Button onClick={increment}>+</Button>
+      <CounterButton onClick={increment}>+</CounterButton>
     </StyledCounter>
   )
 }
