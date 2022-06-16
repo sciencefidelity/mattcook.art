@@ -33,10 +33,7 @@ export const Button = styled("button")<{disabled?: boolean}>`
 export const Counter: FC = () => {
   const [count, setCount] = useState(0)
   const increment = () => setCount(count < 99 ? count + 1 : 99)
-  const decrement = () => {
-    console.log("clicked")
-    setCount(count > 0 ? count - 1 : 0)
-  }
+  const decrement = () => setCount(count > 0 ? count - 1 : 0)
 
   return (
     <StyledCounter>
