@@ -13,34 +13,33 @@ const Paragraph = styled.p`
   width: 4rem;
   text-align: center;
   font-weight: 900;
+  font-size: 2.4rem;
 `
 
-export const Button = styled("button")<{primary?: boolean}>`
-  background-color: ${props => props.primary ? "white" : "palevioletred"};
-  color: ${props => props.primary ? "palevioletred" : "white"};
+export const Button = styled("button")<{disabled?: boolean}>`
+  color: ${props => props.disabled ? "white" : "white"};
+  background-color: ${props => props.disabled ? "lightgrey" : "palevioletred"};
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid ${props => props.disabled ? "lightgrey" : "palevioletred"};
   border-radius: 3px;
   text-decoration: none;
-`
-
-const CounterButton = styled(Button)`
-  cursor: pointer;
+  cursor: ${props => props.disabled ? "default" : "pointer"};
   font-weight: 900;
+  transition: color 0.4s, background-color 0.4s, border 0.4s;
 `
 
 export const Counter: FC = () => {
   const [count, setCount] = useState(0)
-  const increment = () => setCount(count + 1)
-  const decrement = () => setCount(count - 1)
+  const increment = () => setCount(count < 99 ? count + 1 : 99)
+  const decrement = () => setCount(count > 0 ? count - 1 : 0)
 
   return (
     <StyledCounter>
-      <CounterButton onClick={decrement}>–</CounterButton>
+      <Button disabled={count === 0 ? true : false} onClick={decrement}>–</Button>
       <Paragraph>{count}</Paragraph>
-      <CounterButton onClick={increment}>+</CounterButton>
+      <Button disabled={count === 99 ? true : false} onClick={increment}>+</Button>
     </StyledCounter>
   )
 }
