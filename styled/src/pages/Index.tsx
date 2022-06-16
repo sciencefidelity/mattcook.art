@@ -1,5 +1,14 @@
-import React, { FC } from "react"
+import React, { FC, ReactNode } from "react"
 import styled from "styled-components"
+
+interface LinkProps {
+  children: ReactNode
+  className?: string
+}
+
+interface ReversedButtonProps {
+  children: string
+}
 
 const Title = styled.h1`
   font-size: 1.5em;
@@ -11,11 +20,10 @@ const Wrapper = styled.section`
   padding: 4em;
   background: papayawhip;
 `
-// background: ${props => props.primary ? "white" : "palevioletred"}
-// color: ${props => props.primary ? "white" : "palevioletred"}
-const Button = styled.button`
-  background-color: palevioletred;
-  color: white;
+
+const Button = styled("button")<{primary?: boolean}>`
+  background-color: ${props => props.primary ? "white" : "palevioletred"};
+  color: ${props => props.primary ? "palevioletred" : "white"};
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
@@ -29,23 +37,22 @@ const TomatoButton = styled(Button)`
   border-color: tomato;
 `
 
-const ReversedButton = props => (
-  <Button
-    {...props}
-    children={props.children.split("").reverse()}
-  />
-)
+const ReversedButton: FC<ReversedButtonProps> = (props) => {
+  const reversed = props?.children?.split("").reverse().join("")
+  return (
+    <Button {...props}>{reversed}</Button>
+  )
+}
 
-const Link = ({ className, children }) => (
+const Link: FC<LinkProps> = ({ className, children }) => (
   <a className={className}>{children}</a>
 )
 
-// color: ${props => props.inputColor || "palevioletred"}
-const Input = styled.input`
+const Input = styled("input")<{inputColor?: string}>`
   padding: 0.5em;
   margin: 0.5em;
   background-color: papayawhip;
-  color: rebeccapurple;
+  color: ${props => props.inputColor || "palevioletred"};
   border: none;
   border-radius: 3px;
 `
@@ -57,22 +64,23 @@ const StyledLink = styled(Link)`
 
 const Index: FC = () => {
   return (
-    <>
+    <main>
       <Wrapper>
         <Title>
           Hello World!
         </Title>
       </Wrapper>
       <Button>Normal</Button>
+      <Button primary>Normal</Button>
       <TomatoButton as="a" href="#">Tomato</TomatoButton>
       <Button as={ReversedButton}>Primary</Button>
-      {/* <StyledLink>Prettified</StyledLink> */}
+      <StyledLink>Prettified</StyledLink>
       <Input
         defaultValue="@sciencefidelity"
         type="text"
-        // inputColor="rebeccapurple"
+        inputColor="rebeccapurple"
       />
-    </>
+    </main>
   )
 }
 export default Index
