@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react"
 import styled from "styled-components"
+import { Counter } from "../components/Counter"
 
 interface LinkProps {
   children: ReactNode
@@ -45,7 +46,7 @@ const ReversedButton: FC<ReversedButtonProps> = (props) => {
 }
 
 const Link: FC<LinkProps> = ({ className, children }) => (
-  <a className={className}>{children}</a>
+  <Button as="a" href="#" className={className}>{children}</Button>
 )
 
 const Input = styled("input")<{inputColor?: string}>`
@@ -80,6 +81,7 @@ const Index: FC = () => {
         type="text"
         inputColor="rebeccapurple"
       />
+      <Counter />
     </main>
   )
 }
