@@ -32,14 +32,17 @@ export const Button = styled("button")<{disabled?: boolean}>`
 
 export const Counter: FC = () => {
   const [count, setCount] = useState(0)
-  const increment = () => setCount(count < 99 ? count + 1 : 99)
-  const decrement = () => setCount(count > 0 ? count - 1 : 0)
+  const increment = () => setCount(count => count + 1)
+  const decrement = () => setCount(count => count - 1)
+
+  const hasPrev = count > 0
+  const hasNext = count < 99
 
   return (
     <StyledCounter>
-      <Button disabled={count === 0 ? true : false} onClick={decrement}>–</Button>
+      <Button disabled={!hasPrev} onClick={decrement}>–</Button>
       <Paragraph>{count}</Paragraph>
-      <Button disabled={count === 99 ? true : false} onClick={increment}>+</Button>
+      <Button disabled={!hasNext} onClick={increment}>+</Button>
     </StyledCounter>
   )
 }
