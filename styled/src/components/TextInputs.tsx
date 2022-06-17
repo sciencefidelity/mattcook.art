@@ -5,7 +5,7 @@ const Input = styled.input.attrs(props => ({
   type: "text",
   size: props.size || "1em"
 }))`
-  color: palevioletred;
+  color: grey;
   font-size: 1em;
   border: 2px solid palevioletred;
   border-radius: 3px;
@@ -14,12 +14,18 @@ const Input = styled.input.attrs(props => ({
   padding: ${props => props.size};
 `
 
+const PasswordInput = styled(Input).attrs({
+  type: "password"
+})`
+  border: 2px solid rebeccapurple;
+`
+
 export const TextInputs: FC = () => {
   return (
     <div>
-      <Input placeholder="A small text input" />
+      <Input placeholder="A small text input" size="2em" />
       <br />
-      <Input placeholder="A bigger text input" size="2em" />
+      <PasswordInput placeholder="A bigger text input" size="2em" />
     </div>
   )
 }
