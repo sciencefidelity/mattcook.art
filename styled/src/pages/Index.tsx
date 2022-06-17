@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react"
 import styled from "styled-components"
+import { Animate } from "../components/Animate"
 import { Counter } from "../components/Counter"
 import { TextInputs } from "../components/TextInputs"
 
@@ -83,7 +84,8 @@ const Index: FC = () => {
         inputColor="rebeccapurple"
       />
       <Counter />
-      <TextInputs />
+      {/* <TextInputs /> */}
+      <Animate />
     </main>
   )
 }
