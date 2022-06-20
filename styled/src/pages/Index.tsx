@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 // import { Animate } from "../components/Animate"
 import { Counter } from "../components/Counter"
 // import { TextInputs } from "../components/TextInputs"
@@ -25,12 +25,12 @@ const Wrapper = styled.section`
 `
 
 const Button = styled("button")<{primary?: boolean}>`
-  background-color: ${props => props.primary ? "white" : "palevioletred"};
-  color: ${props => props.primary ? "palevioletred" : "white"};
+  background-color: white;
+  color: ${props => props.theme.main};
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid palevioletred;
+  border: 2px solid ${props => props.theme.main};
   border-radius: 3px;
   text-decoration: none;
 `
@@ -38,6 +38,7 @@ const Button = styled("button")<{primary?: boolean}>`
 const TomatoButton = styled(Button)`
   background-color: tomato;
   border-color: tomato;
+  color: white;
 `
 
 const ReversedButton: FC<ReversedButtonProps> = (props) => {
@@ -65,25 +66,43 @@ const StyledLink = styled(Link)`
   font-weight: bold;
 `
 
+Button.defaultProps = {
+  theme: {
+    main: "palevioletred"
+  }
+}
+
+const theme = {
+  main: "palevioletred"
+}
+
+const invertTheme = ({ fg, bg }) => ({
+  bg: fg,
+  fg: bg
+})
+
 const Index: FC = () => {
   return (
     <main>
-      <Wrapper>
-        <Title>
-          Hello World!
-        </Title>
-      </Wrapper>
-      <Button>Normal</Button>
-      <Button primary>Normal</Button>
-      <TomatoButton as="a" href="#">Tomato</TomatoButton>
-      <Button as={ReversedButton}>Primary</Button>
-      <StyledLink>Prettified</StyledLink>
-      <Input
-        defaultValue="@sciencefidelity"
-        type="text"
-        inputColor="rebeccapurple"
-      />
-      <Counter />
+      <ThemeProvider theme={theme}>
+        <Wrapper>
+          <Title>
+            Hello World!
+          </Title>
+        </Wrapper>
+        <Button>Normal</Button>
+        <Button theme={{ main: "mediumseagreen" }}>Normal</Button>
+        <TomatoButton as="a" href="#">Tomato</TomatoButton>
+        <Button as={ReversedButton}>Primary</Button>
+        <Button theme={{ main: "royalblue" }}>Themed</Button>
+        <StyledLink>Linked</StyledLink>
+        <Input
+          defaultValue="@sciencefidelity"
+          type="text"
+          inputColor="rebeccapurple"
+        />
+        <Counter />
+      </ThemeProvider>
       {/* <TextInputs /> */}
       {/* <Animate /> */}
     </main>
