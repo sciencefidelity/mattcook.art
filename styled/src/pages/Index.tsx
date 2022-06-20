@@ -76,11 +76,6 @@ const theme = {
   main: "palevioletred"
 }
 
-const invertTheme = ({ fg, bg }) => ({
-  bg: fg,
-  fg: bg
-})
-
 const Index: FC = () => {
   return (
     <main>

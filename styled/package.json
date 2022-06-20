@@ -21,6 +21,10 @@
     "test": "jest --watchAll --verbose",
     "coverage": "jest --coverage"
   },
+  "resolutions": {
+    "@types/react": "17.0.14",
+    "@types/react-dom": "17.0.14"
+  },
   "dependencies": {
     "modern-normalize": "^1.1.0",
     "prop-types": "^15.8.1",
