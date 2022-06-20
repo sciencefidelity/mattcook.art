@@ -1,10 +1,6 @@
 import React from "react"
 import { createRoot } from "react-dom/client"
-import "sanitize.css/sanitize.css"
-import "sanitize.css/assets.css"
-import "sanitize.css/reduce-motion.css"
-import "sanitize.css/typography.css"
-import "styles/globals.scss"
+import "modern-normalize"
 import Index from "pages/Index"
 
 const container = document.getElementById("root")

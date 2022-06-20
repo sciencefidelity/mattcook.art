@@ -1,8 +1,8 @@
 import React, { FC, ReactNode } from "react"
 import styled from "styled-components"
-import { Animate } from "../components/Animate"
+// import { Animate } from "../components/Animate"
 import { Counter } from "../components/Counter"
-import { TextInputs } from "../components/TextInputs"
+// import { TextInputs } from "../components/TextInputs"
 
 interface LinkProps {
   children: ReactNode
@@ -85,7 +85,7 @@ const Index: FC = () => {
       />
       <Counter />
       {/* <TextInputs /> */}
-      <Animate />
+      {/* <Animate /> */}
     </main>
   )
 }
