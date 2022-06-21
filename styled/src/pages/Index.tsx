@@ -62,7 +62,7 @@ const Input = styled("input")<{inputColor?: string}>`
 `
 
 const StyledLink = styled(Link)`
-  color: palevioletred:
+  color: palevioletred;
   font-weight: bold;
 `
 
