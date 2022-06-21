@@ -22,8 +22,7 @@
     "coverage": "jest --coverage"
   },
   "resolutions": {
-    "@types/react": "17.0.14",
-    "@types/react-dom": "17.0.14"
+    "styled-components": "^5"
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
@@ -72,15 +71,14 @@
     "stylelint-config-recommended-scss": "^6.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^5.0.0",
+    "stylelint-processor-styled-components": "^1.10.0",
     "stylelint-scss": "^4.2.0",
     "stylelint-selector-bem-pattern": "^2.1.1",
     "ts-jest": "^28.0.4",
     "ts-node": "^10.8.1",
     "typescript": "^4.7.3",
     "vite": "^2.9.12"
-  },
-  "resolutions": {
-    "styled-components": "^5"
   }
 }
