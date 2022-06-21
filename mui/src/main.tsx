@@ -1,13 +1,14 @@
-import React from "react"
+import React, { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
+import { BrowserRouter } from "react-router-dom"
+import { RoutesProvider } from "./routesProvider"
 import "@fontsource/roboto/300.css"
 import "@fontsource/roboto/400.css"
 import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
-import "styles/globals.scss"
 import CssBaseline from "@mui/material/CssBaseline"
 import { ThemeProvider, createTheme } from "@mui/material/styles"
-import Index from "pages/Index"
+import "styles/globals.scss"
 
 const container = document.getElementById("root")
 // eslint-disable-next-line
@@ -19,10 +20,12 @@ const darkTheme = createTheme({
 })
 
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <Index />
+      <BrowserRouter>
+        <RoutesProvider />
+      </BrowserRouter>
     </ThemeProvider>
-  </React.StrictMode>
+  </StrictMode>
 )

@@ -19,4 +19,18 @@
   --grey-850: hsl(0, 0%, 15%);
   --grey-900: hsl(0, 0%, 10%);
   --grey-950: hsl(0, 0%, 05%);
+  --font-sans-serif:
+    system-ui,
+    -apple-system,
+    blinkmacsystemfont,
+    'Segoe UI',
+    roboto,
+    oxygen,
+    ubuntu,
+    cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  --font-monospace: ui-monospace, menlo, courier, monospace;
 }

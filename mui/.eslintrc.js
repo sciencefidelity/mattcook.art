@@ -23,7 +23,8 @@ module.exports = {
     "jsx-quotes": ["error", "prefer-double"],
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
-    semi: ["error", "never"]
+    semi: ["error", "never"],
+    "react/react-in-jsx-scope": "off"
   },
   settings: {
     react: {
