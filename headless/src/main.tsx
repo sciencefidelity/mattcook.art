@@ -2,8 +2,8 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { BrowserRouter } from "react-router-dom"
 import { RoutesProvider } from "./routesProvider"
-import "modern-normalize"
-import "styles/globals.scss"
+// import "modern-normalize"
+import "styles/globals.css"
 
 const container = document.getElementById("root")
 // eslint-disable-next-line

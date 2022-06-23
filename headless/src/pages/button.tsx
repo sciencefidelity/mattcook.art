@@ -1,8 +1,6 @@
-import { FC } from "react"
-import Button from "@mui/material/button"
-import { Card } from "@mui/material"
+import { Menu } from "@headlessui/react"
 
-const ButtonComponent: FC = () => {
+const ButtonComponent = () => {
   return (
     <div className="container">
       <main>
@@ -11,42 +9,34 @@ const ButtonComponent: FC = () => {
           height: "100vh",
           placeItems: "center"
         }}>
-          <Card style={{
-            width: "25rem",
-            height: "10rem",
-            paddingInline: "2rem",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, auto)",
-            placeItems: "center"
-          }}>
-            <Button>Primary</Button>
-            <Button disabled>Disabled</Button>
-            <Button href="#text-buttons">Link</Button>
-          </Card>
-          <Card style={{
-            width: "25rem",
-            height: "10rem",
-            paddingInline: "2rem",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, auto)",
-            placeItems: "center"
-          }}>
-            <Button variant="contained">Primary</Button>
-            <Button variant="contained" disabled>Disabled</Button>
-            <Button variant="contained" href="#text-buttons">Link</Button>
-          </Card>
-          <Card style={{
-            width: "25rem",
-            height: "10rem",
-            paddingInline: "2rem",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, auto)",
-            placeItems: "center"
-          }}>
-            <Button variant="outlined">Primary</Button>
-            <Button variant="outlined" disabled>Disabled</Button>
-            <Button variant="outlined" href="#text-buttons">Link</Button>
-          </Card>
+          <Menu>
+            <Menu.Button>More</Menu.Button>
+            <Menu.Items>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    className={`${active && 'bg-blue-500'}`}
+                    href="/account-settings"
+                  >
+                    Account settings
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item>
+                {({ active }) => (
+                  <a
+                    className={`${active && 'bg-blue-500'}`}
+                    href="/account-settings"
+                  >
+                    Documentation
+                  </a>
+                )}
+              </Menu.Item>
+              <Menu.Item disabled>
+                <span className="opacity-75">Invite a friend (coming soon!)</span>
+              </Menu.Item>
+            </Menu.Items>
+          </Menu>
         </div>
       </main>
     </div>

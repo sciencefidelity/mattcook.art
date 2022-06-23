@@ -1,3 +1,4 @@
+/* eslint-disable */
 /** @type {import("@types/eslint").Linter.Config */
 module.exports = {
   env: {
