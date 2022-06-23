@@ -1,6 +1,6 @@
 import { Menu } from "@headlessui/react"
 
-const ButtonComponent = () => {
+const MyMenu = () => {
   return (
     <div className="container">
       <main>
@@ -47,4 +47,4 @@ const ButtonComponent = () => {
     </div>
   )
 }
-export default ButtonComponent
+export default MyMenu
