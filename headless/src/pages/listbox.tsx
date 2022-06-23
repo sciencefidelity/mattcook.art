@@ -11,7 +11,7 @@ const people = [
   { name: "Hellen Schmidt" }
 ]
 
-export default function Example() {
+export default function ListBox() {
   const [selected, setSelected] = useState(people[0])
 
   return (

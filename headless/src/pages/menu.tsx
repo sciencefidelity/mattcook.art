@@ -9,7 +9,7 @@ interface Props {
   }
 }
 
-export default function Example() {
+export default function MyMenu() {
   return (
     <div 
       className="relative mt-8 mb-12 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r to-indigo-500 from-purple-500"
