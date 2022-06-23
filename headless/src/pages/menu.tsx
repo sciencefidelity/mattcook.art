@@ -4,18 +4,21 @@ const ButtonComponent = () => {
   return (
     <div className="container">
       <main>
-        <div style={{
-          display: "grid",
-          height: "100vh",
-          placeItems: "center"
-        }}>
+        <div
+          className=""
+          style={{
+            display: "grid",
+            height: "100vh",
+            placeItems: "center"
+          }}
+        >
           <Menu>
             <Menu.Button>More</Menu.Button>
             <Menu.Items>
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    className={`${active && 'bg-blue-500'}`}
+                    className={`${active && "bg-blue-500"}`}
                     href="/account-settings"
                   >
                     Account settings
@@ -25,7 +28,7 @@ const ButtonComponent = () => {
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    className={`${active && 'bg-blue-500'}`}
+                    className={`${active && "bg-blue-500"}`}
                     href="/account-settings"
                   >
                     Documentation
@@ -33,7 +36,9 @@ const ButtonComponent = () => {
                 )}
               </Menu.Item>
               <Menu.Item disabled>
-                <span className="opacity-75">Invite a friend (coming soon!)</span>
+                <span className="opacity-75">
+                  Invite a friend (coming soon!)
+                </span>
               </Menu.Item>
             </Menu.Items>
           </Menu>
