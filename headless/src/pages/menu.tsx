@@ -1,24 +1,15 @@
+import { FC, Fragment } from "react"
 import { Menu, Transition } from "@headlessui/react"
-import { Fragment } from "react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 
 interface Props {
-  props: {
-    className?: string
-    "aria-hidden"?: string
-  }
+  className?: string
+  ariaHidden?: string
 }
 
 export default function MyMenu() {
   return (
-    <div 
-      className="relative mt-8 mb-12 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r to-indigo-500 from-purple-500"
-      style={{
-        height: "24rem",
-        width: "25rem",
-        margin: "2rem auto"
-      }}
-    >
+    <div className="relative w-96 h-96 mx-auto my-8 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r to-indigo-500 from-purple-500">
       <div className="fixed top-16 w-56 text-right">
         <Menu as="div" className="relative inline-block text-left">
           <div>
@@ -164,10 +155,11 @@ export default function MyMenu() {
   )
 }
 
-function EditInactiveIcon(props: Props) {
+const EditInactiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -182,10 +174,11 @@ function EditInactiveIcon(props: Props) {
   )
 }
 
-function EditActiveIcon(props: Props) {
+const EditActiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -200,10 +193,11 @@ function EditActiveIcon(props: Props) {
   )
 }
 
-function DuplicateInactiveIcon(props: Props) {
+const DuplicateInactiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -224,10 +218,11 @@ function DuplicateInactiveIcon(props: Props) {
   )
 }
 
-function DuplicateActiveIcon(props: Props) {
+const DuplicateActiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -248,10 +243,11 @@ function DuplicateActiveIcon(props: Props) {
   )
 }
 
-function ArchiveInactiveIcon(props: Props) {
+const ArchiveInactiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -279,10 +275,11 @@ function ArchiveInactiveIcon(props: Props) {
   )
 }
 
-function ArchiveActiveIcon(props: Props) {
+const ArchiveActiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -310,10 +307,11 @@ function ArchiveActiveIcon(props: Props) {
   )
 }
 
-function MoveInactiveIcon(props: Props) {
+const MoveInactiveIcon:FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -325,10 +323,11 @@ function MoveInactiveIcon(props: Props) {
   )
 }
 
-function MoveActiveIcon(props: Props) {
+const MoveActiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -340,10 +339,11 @@ function MoveActiveIcon(props: Props) {
   )
 }
 
-function DeleteInactiveIcon(props: Props) {
+const DeleteInactiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -363,10 +363,11 @@ function DeleteInactiveIcon(props: Props) {
   )
 }
 
-function DeleteActiveIcon(props: Props) {
+const DeleteActiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
-      {...props}
+      className={className}
+      aria-hiddel={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

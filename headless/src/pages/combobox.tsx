@@ -31,14 +31,7 @@ export default function MyCombobox() {
       )
 
   return (
-    <div 
-      className="relative mt-8 mb-12 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400"
-      style={{
-        height: "24rem",
-        width: "25rem",
-        margin: "2rem auto"
-      }}
-    >
+    <div className="relative w-96 h-96 mx-auto my-8 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400">
       <div className="fixed top-16 w-72">
         <Combobox value={selected} onChange={setSelected}>
           <div className="relative mt-1">

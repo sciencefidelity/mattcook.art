@@ -16,12 +16,7 @@ export default function ListBox() {
 
   return (
     <div 
-      className="relative mt-8 mb-12 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-amber-300 to-orange-500"
-      style={{
-        height: "24rem",
-        width: "25rem",
-        margin: "2rem auto"
-      }}
+      className="relative w-96 h-96 mx-auto my-8 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-amber-300 to-orange-500"
     >
       <div className="fixed top-16 w-72">
         <Listbox value={selected} onChange={setSelected}>
