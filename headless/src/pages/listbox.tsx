@@ -4,7 +4,7 @@ import { Listbox, Transition } from "@headlessui/react"
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
 import { Layout } from "../components/Layout"
 
-const req = new Request("https://swapi.dev/api/people/")
+const req = new Request("https://swapi.dev/api/planets/")
 
 interface Person {
   created: string
