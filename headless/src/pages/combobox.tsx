@@ -1,22 +1,30 @@
 import { Fragment, useState } from "react"
+import { useQuery } from "react-query"
 import { Combobox, Transition } from "@headlessui/react"
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
+import { Layout } from "../components/Layout"
 
 interface Person {
-  id: number
+  created: string
   name: string
 }
 
-const people = [
-  { id: 1, name: "Wade Cooper" },
-  { id: 2, name: "Arlene Mccoy" },
-  { id: 3, name: "Devon Webb" },
-  { id: 4, name: "Tom Cook" },
-  { id: 5, name: "Tanya Fox" },
-  { id: 6, name: "Hellen Schmidt" }
-]
+const req = new Request("https://swapi.dev/api/people/")
 
 export default function MyCombobox() {
+  const { isLoading, error, data } = useQuery("userData", async () =>
+    await fetch(req).then(res => res.json())
+  )
+  if (isLoading) return <div>Loading...</div>
+  let errorMessage = "An unknown error has occurred"
+  if (error instanceof Error) {
+    errorMessage = `An error has occurred: ${error.message}`
+  }
+  if (error) return <div>{errorMessage}</div>
+
+  const { results }: { results: Person[] } = data
+  const people = results
+
   const [selected, setSelected] = useState(people[0])
   const [query, setQuery] = useState("")
 
@@ -29,9 +37,10 @@ export default function MyCombobox() {
           .replace(/\s+/g, "")
           .includes(query.toLowerCase().replace(/\s+/g, ""))
       )
+  const colors = "from-teal-400 to-cyan-400"
 
   return (
-    <div className="relative w-96 h-96 mx-auto my-8 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-teal-400 to-cyan-400">
+    <Layout colors={colors}>
       <div className="fixed top-16 w-72">
         <Combobox value={selected} onChange={setSelected}>
           <div className="relative mt-1">
@@ -63,7 +72,7 @@ export default function MyCombobox() {
                 ) : (
                   filteredPeople.map(person => (
                     <Combobox.Option
-                      key={person.id}
+                      key={person.created}
                       className={({ active }) =>
                         `relative cursor-default select-none py-2 pl-10 pr-4 ${
                           active ? "bg-teal-600 text-white" : "text-gray-900"
@@ -99,6 +108,6 @@ export default function MyCombobox() {
           </div>
         </Combobox>
       </div>
-    </div>
+    </Layout>
   )
 }

@@ -1,23 +1,34 @@
 import { Fragment, useState } from "react"
+import { useQuery } from "react-query"
 import { Listbox, Transition } from "@headlessui/react"
 import { CheckIcon, SelectorIcon } from "@heroicons/react/solid"
+import { Layout } from "../components/Layout"
 
-const people = [
-  { name: "Wade Cooper" },
-  { name: "Arlene Mccoy" },
-  { name: "Devon Webb" },
-  { name: "Tom Cook" },
-  { name: "Tanya Fox" },
-  { name: "Hellen Schmidt" }
-]
+const req = new Request("https://swapi.dev/api/people/")
+
+interface Person {
+  created: string
+  name: string
+}
 
 export default function ListBox() {
-  const [selected, setSelected] = useState(people[0])
+  const { isLoading, error, data } = useQuery("userData", async () =>
+    await fetch(req).then(res => res.json())
+  )
+  if (isLoading) return <div>Loading...</div>
+  let errorMessage = "An unknown error has occurred"
+  if (error instanceof Error) {
+    errorMessage = `An error has occurred: ${error.message}`
+  }
+  if (error) return <div>{errorMessage}</div>
 
+  const { results }: { results: Person[] } = data
+  const people = results
+
+  const [selected, setSelected] = useState(people[0])
+  const colors = "from-amber-300 to-orange-500"
   return (
-    <div 
-      className="relative w-96 h-96 mx-auto my-8 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-amber-300 to-orange-500"
-    >
+    <Layout colors={colors}>
       <div className="fixed top-16 w-72">
         <Listbox value={selected} onChange={setSelected}>
           <div className="relative mt-1">
@@ -70,6 +81,6 @@ export default function ListBox() {
           </div>
         </Listbox>
       </div>
-    </div>
+    </Layout>
   )
 }

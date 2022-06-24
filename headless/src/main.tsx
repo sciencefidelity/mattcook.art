@@ -1,18 +1,18 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
-import { BrowserRouter } from "react-router-dom"
-import { RoutesProvider } from "./routesProvider"
-// import "modern-normalize"
+import { QueryClient, QueryClientProvider } from "react-query"
+import App from "./App"
 import "./styles/index.css"
 
 const container = document.getElementById("root")
 // eslint-disable-next-line
 const root = createRoot(container!)
+const queryClient = new QueryClient()
 
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <RoutesProvider />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
   </StrictMode>
 )

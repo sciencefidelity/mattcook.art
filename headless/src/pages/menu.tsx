@@ -1,6 +1,7 @@
 import { FC, Fragment } from "react"
 import { Menu, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
+import { Layout } from "../components/Layout"
 
 interface Props {
   className?: string
@@ -8,8 +9,9 @@ interface Props {
 }
 
 export default function MyMenu() {
+  const colors = "to-indigo-500 from-purple-500"
   return (
-    <div className="relative w-96 h-96 mx-auto my-8 flex flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r to-indigo-500 from-purple-500">
+    <Layout colors={colors}>
       <div className="fixed top-16 w-56 text-right">
         <Menu as="div" className="relative inline-block text-left">
           <div>
@@ -151,7 +153,7 @@ export default function MyMenu() {
           </Transition>
         </Menu>
       </div>
-    </div>
+    </Layout>
   )
 }
 
