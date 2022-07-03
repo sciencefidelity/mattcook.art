@@ -15,8 +15,14 @@
       }
     ],
     "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind"]
+      }
+    ],
     "color-no-hex": true,
-    "color-function-notation": "legacy",
+    "color-function-notation": "modern",
     "hue-degree-notation": "number",
     "max-nesting-depth": 4,
     "no-empty-first-line": null,
@@ -25,7 +31,6 @@
     "value-keyword-case": ["lower", { "ignoreProperties": ["/^\\$/"] }],
     "order/properties-alphabetical-order": null,
     "selector-class-pattern": null,
-    "scss/at-rule-no-unknown": true,
     "plugin/selector-bem-pattern": {
       "componentName": "[A-Z]+",
       "componentSelectors": {
