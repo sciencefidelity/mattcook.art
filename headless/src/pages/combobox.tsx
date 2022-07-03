@@ -12,8 +12,9 @@ interface Person {
 const req = new Request("https://swapi.dev/api/people/")
 
 export default function MyCombobox() {
-  const { isLoading, error, data } = useQuery("userData", async () =>
-    await fetch(req).then(res => res.json())
+  const { isLoading, error, data } = useQuery(
+    "userData",
+    async () => await fetch(req).then(res => res.json())
   )
   if (isLoading) return <div>Loading...</div>
   let errorMessage = "An unknown error has occurred"
@@ -32,11 +33,11 @@ export default function MyCombobox() {
     query === ""
       ? people
       : people.filter(person =>
-        person.name
-          .toLowerCase()
-          .replace(/\s+/g, "")
-          .includes(query.toLowerCase().replace(/\s+/g, ""))
-      )
+          person.name
+            .toLowerCase()
+            .replace(/\s+/g, "")
+            .includes(query.toLowerCase().replace(/\s+/g, ""))
+        )
   const colors = "from-teal-400 to-cyan-400"
 
   return (
@@ -95,7 +96,10 @@ export default function MyCombobox() {
                                 active ? "text-white" : "text-teal-600"
                               }`}
                             >
-                              <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                              <CheckIcon
+                                className="h-5 w-5"
+                                aria-hidden="true"
+                              />
                             </span>
                           ) : null}
                         </>

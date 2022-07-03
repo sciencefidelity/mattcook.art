@@ -309,7 +309,7 @@ const ArchiveActiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   )
 }
 
-const MoveInactiveIcon:FC<Props> = ({ className, ariaHidden }) => {
+const MoveInactiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
       className={className}

@@ -12,8 +12,9 @@ interface Person {
 }
 
 export default function ListBox() {
-  const { isLoading, error, data } = useQuery("userData", async () =>
-    await fetch(req).then(res => res.json())
+  const { isLoading, error, data } = useQuery(
+    "userData",
+    async () => await fetch(req).then(res => res.json())
   )
   if (isLoading) return <div>Loading...</div>
   let errorMessage = "An unknown error has occurred"

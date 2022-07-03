@@ -1,4 +1,3 @@
-/* eslint-disable */
 /** @type {import("@types/eslint").Linter.Config */
 module.exports = {
   env: {
@@ -20,11 +19,11 @@ module.exports = {
   },
   plugins: ["@typescript-eslint", "jest-dom", "testing-library"],
   rules: {
-    indent: ["error", 2],
-    "jsx-quotes": ["error", "prefer-double"],
+    indent: "off",
+    "jsx-quotes": "off",
     "linebreak-style": ["error", "unix"],
-    quotes: ["error", "double"],
-    semi: ["error", "never"],
+    quotes: "off",
+    semi: "off",
     "react/react-in-jsx-scope": "off"
   },
   settings: {
