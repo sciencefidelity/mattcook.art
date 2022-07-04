@@ -1,5 +1,7 @@
+/* eslint-env node */
 /** @type {import("@types/eslint").Linter.Config */
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true

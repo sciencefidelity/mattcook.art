@@ -2,31 +2,39 @@ import React, { FC, useState } from "react"
 import styled from "styled-components"
 
 const StyledCounter = styled.div`
-  border: 2px solid palevioletred;
   display: inline-block;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(219, 112, 147);
   border-radius: 7px;
 `
 
 const Paragraph = styled.p`
   display: inline-block;
-  color: rebeccapurple;
   width: 4rem;
-  text-align: center;
-  font-weight: 900;
   font-size: 2.4rem;
+  font-weight: 900;
+  color: rgb(102, 51, 153);
+  text-align: center;
 `
 
-export const Button = styled("button")<{disabled?: boolean}>`
-  color: ${props => props.disabled ? "white" : "white"};
-  background-color: ${props => props.disabled ? "lightgrey" : "palevioletred"};
-  font-size: 1em;
-  margin: 1em;
+// prettier-ignore
+export const Button = styled("button")<{ disabled?: boolean }>`
   padding: 0.25em 1em;
-  border: 2px solid ${props => props.disabled ? "lightgrey" : "palevioletred"};
-  border-radius: 3px;
-  text-decoration: none;
-  cursor: ${props => props.disabled ? "default" : "pointer"};
+  margin: 1em;
+  font-size: 1em;
   font-weight: 900;
+  color:
+    ${props => 
+      props.disabled ? "rgb(255, 255, 255);" : "rgb(255, 255, 255)"};
+  text-decoration: none;
+  cursor: ${props => (props.disabled ? "default" : "pointer")};
+  background-color:
+    ${props => 
+      props.disabled ? "rgb(211, 211, 211);" :  "rgb(219, 112, 147)"};
+  border:
+    2px solid ${props => (
+      props.disabled ? "rgb(211, 211, 211);" : "rgb(219, 112, 147)")};
+  border-radius: 3px;
   transition: color 0.4s, background-color 0.4s, border 0.4s;
 `
 
@@ -40,9 +48,13 @@ export const Counter: FC = () => {
 
   return (
     <StyledCounter>
-      <Button disabled={!hasPrev} onClick={decrement}>–</Button>
+      <Button disabled={!hasPrev} onClick={decrement}>
+        –
+      </Button>
       <Paragraph>{count}</Paragraph>
-      <Button disabled={!hasNext} onClick={increment}>+</Button>
+      <Button disabled={!hasNext} onClick={increment}>
+        +
+      </Button>
     </StyledCounter>
   )
 }

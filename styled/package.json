@@ -13,7 +13,7 @@
     "lint": "concurrently 'yarn:lint:*'",
     "lint:js": "eslint '**/*.{ts,js,tsx,jsx}'",
     "lint:format": "prettier --check '**/*.{ts,js,tsx,jsx,json,md,yml}'",
-    "lint:styles": "stylelint --ignore-path .eslintignore '**/*.scss'",
+    "lint:styles": "stylelint --ignore-path .eslintignore '**/*.{scss,tsx}'",
     "fix": "concurrently 'yarn:fix:*'",
     "fix:js": "eslint --fix '**/*.{ts,js}'",
     "fix:format": "prettier --write '**/*.{ts,js,tsx,jsx,json,md,yml}'",
