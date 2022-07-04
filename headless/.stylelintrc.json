@@ -21,7 +21,7 @@
       }
     ],
     "color-no-hex": true,
-    "color-function-notation": "modern",
+    "color-function-notation": "legacy",
     "hue-degree-notation": "number",
     "max-nesting-depth": 4,
     "no-empty-first-line": null,
@@ -38,6 +38,7 @@
       },
       "utilitySelectors": "^\\.util-[a-z]+$"
     },
-    "function-no-unknown": [true, { "ignoreFunctions": ["map.get"] }]
+    "function-no-unknown": [true, { "ignoreFunctions": ["map.get"] }],
+    "keyframes-name-pattern": null
   }
 }
