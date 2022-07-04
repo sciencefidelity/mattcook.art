@@ -6,10 +6,13 @@ type Preserved = any
 const PRESERVED = import.meta.globEager("/src/pages/(_app|404).tsx")
 const ROUTES = import.meta.globEager("/src/pages/**/[a-z[]*.tsx")
 
-const preserved: Preserved = Object.keys(PRESERVED).reduce((preserved, file) => {
-  const key = file.replace(/\/src\/pages\/|\.tsx$/g, "")
-  return { ...preserved, [key]: PRESERVED[file].default }
-}, {})
+const preserved: Preserved = Object.keys(PRESERVED).reduce(
+  (preserved, file) => {
+    const key = file.replace(/\/src\/pages\/|\.tsx$/g, "")
+    return { ...preserved, [key]: PRESERVED[file].default }
+  },
+  {}
+)
 
 const routes = Object.keys(ROUTES).map(route => {
   const path = route
