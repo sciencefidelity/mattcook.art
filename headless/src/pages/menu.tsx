@@ -5,7 +5,7 @@ import { Layout } from "../components/Layout"
 
 interface Props {
   className?: string
-  ariaHidden?: string
+  ariaHidden?: boolean
 }
 
 export default function MyMenu() {
