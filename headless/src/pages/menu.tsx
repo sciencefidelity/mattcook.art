@@ -199,7 +199,7 @@ const DuplicateInactiveIcon: FC<Props> = ({ className, ariaHidden }) => {
   return (
     <svg
       className={className}
-      aria-hiddel={ariaHidden}
+      aria-hidden={ariaHidden}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
